@@ -27,6 +27,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow-x: hidden;
         }
 
         .container {
@@ -70,6 +71,22 @@
         .hero-right-block p {
             font-size: 18px;
             color: #a1a1a6;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .support-block {
+            padding: 30px 60px;
+            background-color: #1c1c1e;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            width: fit-content;
+        }
+
+        .support-block p {
+            font-size: 27px;
+            color: #ffffff;
             line-height: 1.6;
             margin: 0;
         }
@@ -215,43 +232,87 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                gap: 15px;
+            }
+
             .hero-wrapper {
                 flex-direction: column;
+                gap: 15px;
+            }
+
+            .support-block {
+                width: 100%;
+                padding: 20px 30px;
+            }
+
+            .support-block p {
+                font-size: 18px;
             }
 
             .hero-section {
                 flex-direction: column;
-                padding: 40px 0;
+                padding: 20px 30px;
+                width: 100%;
             }
 
             .hero-right-block {
                 width: 100%;
+                padding: 20px 30px;
+            }
+
+            .text-content {
+                min-width: auto;
+                width: 100%;
             }
 
             .text-content h1 {
-                font-size: 36px;
+                font-size: 32px;
             }
 
             .text-content p {
-                font-size: 20px;
+                font-size: 18px;
             }
 
             .apps-row {
                 justify-content: center;
+                flex-wrap: wrap;
             }
 
             .sections-wrapper {
                 flex-direction: column;
+                gap: 15px;
+            }
+
+            .section {
+                padding: 20px 30px;
+                width: 100% !important;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
+
+            .section ol {
+                font-size: 18px;
             }
 
             .section.coming-soon,
             .section.how-it-works {
-                width: 100%;
-                margin-bottom: 80px;
+                margin-bottom: 0;
             }
 
-            .section.how-it-works {
-                margin-bottom: 0;
+            .screenshots-row {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .screenshots-row img {
+                max-height: 200px;
             }
         }
     </style>
@@ -259,6 +320,9 @@
 <body>
         <div class="container">
         <div class="hero-wrapper">
+            <div class="support-block">
+                <p>Issues? Request support at naiv.agency@gmail.com</p>
+            </div>
             <div class="hero-section">
                 <div class="text-content">
                     <h1>Rodion Novikov</h1>
