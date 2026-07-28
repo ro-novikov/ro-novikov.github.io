@@ -85,7 +85,8 @@
 
         .apps-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 220px));
+            justify-content: center;
             gap: 20px;
         }
 
@@ -94,16 +95,27 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            gap: 18px;
-            padding: 28px 24px;
+            min-height: 360px;
             background-color: #1c1c1e;
             border-radius: 20px;
+            overflow: hidden;
             text-align: center;
+        }
+
+        .app-block-main {
+            display: flex;
+            flex: 1;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            padding: 32px 24px 24px;
         }
 
         .app-block-icon {
             display: block;
-            width: 80px;
+            width: 112px;
             aspect-ratio: 1;
             flex-shrink: 0;
             transition: transform 0.2s ease;
@@ -126,6 +138,25 @@
             font-weight: 600;
             color: #ffffff;
             line-height: 1.2;
+        }
+
+        .support-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 72px;
+            padding: 16px 20px;
+            background-color: #8fbc82;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 24px;
+            line-height: 1.2;
+            transition: background-color 0.2s ease;
+        }
+
+        .support-button:hover {
+            background-color: #7eaa72;
         }
 
         .copyright {
@@ -179,16 +210,25 @@
             }
 
             .app-block {
-                padding: 24px 16px;
+                min-height: 300px;
+            }
+
+            .app-block-main {
                 gap: 16px;
+                padding: 24px 16px 20px;
             }
 
             .app-block-icon {
-                width: 64px;
+                width: 88px;
             }
 
             .app-block-name {
                 font-size: 18px;
+            }
+
+            .support-button {
+                min-height: 60px;
+                font-size: 20px;
             }
         }
     </style>
@@ -207,34 +247,49 @@
 
         <div class="apps-list">
             <div class="app-block">
-                <a class="app-block-icon" href="https://apps.apple.com/us/app/procrastination-solved-acty/id6751211430" target="_blank" rel="noopener noreferrer">
-                    <img src="Assets/App Icons/acty_app_icon.png" alt="Acty">
-                </a>
-                <span class="app-block-name">Acty</span>
+                <div class="app-block-main">
+                    <a class="app-block-icon" href="https://apps.apple.com/us/app/procrastination-solved-acty/id6751211430" target="_blank" rel="noopener noreferrer">
+                        <img src="Assets/App Icons/acty_app_icon.png" alt="Acty">
+                    </a>
+                    <span class="app-block-name">Acty</span>
+                </div>
+                <a class="support-button" href="https://sites.google.com/view/acty-app/home" target="_blank" rel="noopener noreferrer">Support</a>
             </div>
             <div class="app-block">
-                <a class="app-block-icon" href="https://apps.apple.com/us/app/dream-interpretation-ai-app/id1670009423" target="_blank" rel="noopener noreferrer">
-                    <img src="Assets/App Icons/dmai_app_icon.png" alt="Dream AI">
-                </a>
-                <span class="app-block-name">Dream AI</span>
+                <div class="app-block-main">
+                    <a class="app-block-icon" href="https://apps.apple.com/us/app/dream-interpretation-ai-app/id1670009423" target="_blank" rel="noopener noreferrer">
+                        <img src="Assets/App Icons/dmai_app_icon.png" alt="Dream AI">
+                    </a>
+                    <span class="app-block-name">Dream AI</span>
+                </div>
+                <a class="support-button" href="https://sites.google.com/view/dream-meaning-ai-privacy/privacy-policy" target="_blank" rel="noopener noreferrer">Support</a>
             </div>
             <div class="app-block">
-                <a class="app-block-icon" href="https://apps.apple.com/us/app/blob-to-do-task-list/id6744033382" target="_blank" rel="noopener noreferrer">
-                    <img src="Assets/App Icons/blobtodo_app_icon.png" alt="Blob To Do">
-                </a>
-                <span class="app-block-name">Blob To Do</span>
+                <div class="app-block-main">
+                    <a class="app-block-icon" href="https://apps.apple.com/us/app/blob-to-do-task-list/id6744033382" target="_blank" rel="noopener noreferrer">
+                        <img src="Assets/App Icons/blobtodo_app_icon.png" alt="Blob To Do">
+                    </a>
+                    <span class="app-block-name">Blob To Do</span>
+                </div>
+                <a class="support-button" href="https://sites.google.com/view/blob-to-do-app/home" target="_blank" rel="noopener noreferrer">Support</a>
             </div>
             <div class="app-block">
-                <a class="app-block-icon" href="https://apps.apple.com/us/app/e4c5-app-blocker/id6757018750" target="_blank" rel="noopener noreferrer">
-                    <img src="Assets/App Icons/e4c5_app_icon.png" alt="e4c5 app blocker">
-                </a>
-                <span class="app-block-name">e4c5<br>app blocker</span>
+                <div class="app-block-main">
+                    <a class="app-block-icon" href="https://apps.apple.com/us/app/e4c5-app-blocker/id6757018750" target="_blank" rel="noopener noreferrer">
+                        <img src="Assets/App Icons/e4c5_app_icon.png" alt="e4c5 app blocker">
+                    </a>
+                    <span class="app-block-name">e4c5<br>app blocker</span>
+                </div>
+                <a class="support-button" href="https://sites.google.com/view/e4e5-app-block/home" target="_blank" rel="noopener noreferrer">Support</a>
             </div>
             <div class="app-block">
-                <a class="app-block-icon" href="http://apps.apple.com/us/app/bible-verse-widget-kjv/id6794831675" target="_blank" rel="noopener noreferrer">
-                    <img src="Assets/App Icons/bibw_app_icon.png" alt="Bible Verse Widget">
-                </a>
-                <span class="app-block-name">Bible Verse<br>Widget</span>
+                <div class="app-block-main">
+                    <a class="app-block-icon" href="http://apps.apple.com/us/app/bible-verse-widget-kjv/id6794831675" target="_blank" rel="noopener noreferrer">
+                        <img src="Assets/App Icons/bibw_app_icon.png" alt="Bible Verse Widget">
+                    </a>
+                    <span class="app-block-name">Bible Verse<br>Widget</span>
+                </div>
+                <a class="support-button" href="https://sites.google.com/view/bibleversewidget/home" target="_blank" rel="noopener noreferrer">Support</a>
             </div>
         </div>
 
