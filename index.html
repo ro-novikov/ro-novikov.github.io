@@ -34,45 +34,21 @@
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
-            display: grid;
-            grid-template-rows: auto 1fr auto;
+            display: flex;
+            flex-direction: column;
             gap: 20px;
             flex: 1;
-        }
-
-        .hero-wrapper {
-            display: flex;
-            gap: 20px;
-            align-items: stretch;
-            min-height: 0;
         }
 
         .hero-section {
             display: flex;
             align-items: center;
             gap: 60px;
-            flex-wrap: wrap;
+            justify-content: space-between;
             padding: 30px 60px;
             background-color: #1c1c1e;
             border-radius: 20px;
-            flex: 1;
-            min-height: 0;
-        }
-
-        .hero-right-block {
-            padding: 60px;
-            background-color: #1c1c1e;
-            border-radius: 20px;
-            width: fit-content;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-right-block p {
-            font-size: 18px;
-            color: #a1a1a6;
-            line-height: 1.6;
-            margin: 0;
+            width: 100%;
         }
 
         .support-block {
@@ -81,7 +57,7 @@
             border-radius: 20px;
             display: flex;
             align-items: center;
-            width: fit-content;
+            width: 100%;
         }
 
         .support-block p {
@@ -114,6 +90,8 @@
             display: flex;
             gap: 20px;
             align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
         }
 
         .app-icon {
@@ -122,10 +100,14 @@
             justify-content: center;
         }
 
-        .app-icon a {
+        .app-icon a,
+        .app-icon span {
             display: block;
             width: 80px;
             aspect-ratio: 1;
+        }
+
+        .app-icon a {
             transition: transform 0.2s ease;
             cursor: pointer;
         }
@@ -138,89 +120,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
-        }
-
-        .sections-wrapper {
-            display: flex;
-            gap: 20px;
-            align-items: stretch;
-            min-height: 0;
-        }
-
-        .section {
-            padding: 30px 60px;
-            background-color: #1c1c1e;
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            min-height: 0;
-        }
-
-        .section.coming-soon {
-            width: fit-content;
-            align-self: flex-start;
-        }
-
-        .section.how-it-works {
-            flex: 1;
-            align-self: flex-start;
-        }
-
-        .section h2 {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .section h2 .app-icon-small {
-            width: 48px;
-            height: 48px;
-            flex-shrink: 0;
-        }
-
-        .section h2 .app-icon-small img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .section p {
-            font-size: 18px;
-            color: #a1a1a6;
-            line-height: 1.6;
-        }
-
-        .section ol {
-            font-size: 32px;
-            color: #a1a1a6;
-            line-height: 1.8;
-            padding-left: 20px;
-            margin: 0;
-        }
-
-        .section ol li {
-            margin-bottom: 10px;
-        }
-
-        .screenshots-row {
-            display: flex;
-            flex-direction: row;
-            gap: 15px;
-            margin-top: 0;
-            align-items: flex-start;
-            width: fit-content;
-        }
-
-        .screenshots-row img {
-            width: auto;
-            height: auto;
-            max-height: 300px;
             display: block;
         }
 
@@ -240,11 +139,6 @@
                 gap: 15px;
             }
 
-            .hero-wrapper {
-                flex-direction: column;
-                gap: 15px;
-            }
-
             .support-block {
                 width: 100%;
                 padding: 20px 30px;
@@ -258,11 +152,8 @@
                 flex-direction: column;
                 padding: 20px 30px;
                 width: 100%;
-            }
-
-            .hero-right-block {
-                width: 100%;
-                padding: 20px 30px;
+                gap: 24px;
+                align-items: flex-start;
             }
 
             .text-content {
@@ -279,98 +170,48 @@
             }
 
             .apps-row {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .sections-wrapper {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .section {
-                padding: 20px 30px;
-                width: 100% !important;
-            }
-
-            .section h2 {
-                font-size: 24px;
-            }
-
-            .section ol {
-                font-size: 18px;
-            }
-
-            .section.coming-soon,
-            .section.how-it-works {
-                margin-bottom: 0;
-            }
-
-            .screenshots-row {
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-
-            .screenshots-row img {
-                max-height: 200px;
+                justify-content: flex-start;
             }
         }
     </style>
 </head>
 <body>
         <div class="container">
-        <div class="hero-wrapper">
-            <div class="support-block">
-                <p>Issues? Request support at naiv.agency@gmail.com</p>
+        <div class="hero-section">
+            <div class="text-content">
+                <h1>Rodion Novikov</h1>
+                <p>marketer, builder</p>
             </div>
-            <div class="hero-section">
-                <div class="text-content">
-                    <h1>Rodion Novikov</h1>
-                    <p>marketer, builder</p>
+            <div class="apps-row">
+                <div class="app-icon">
+                    <a href="https://apps.apple.com/us/app/procrastination-solved-acty/id6751211430" target="_blank" rel="noopener noreferrer">
+                        <img src="Assets/App Icons/acty_app_icon.png" alt="Acty - Procrastination Solved">
+                    </a>
                 </div>
-                <div class="apps-row">
-                    <div class="app-icon">
-                        <a href="https://apps.apple.com/us/app/procrastination-solved-acty/id6751211430" target="_blank" rel="noopener noreferrer">
-                            <img src="Assets/App Icons/acty_app_icon.png" alt="Acty - Procrastination Solved">
-                        </a>
-                    </div>
-                    <div class="app-icon">
-                        <a href="https://apps.apple.com/us/app/dream-interpretation-ai-app/id1670009423" target="_blank" rel="noopener noreferrer">
-                            <img src="Assets/App Icons/dmai_app_icon.png" alt="Dream Interpretation AI App">
-                        </a>
-                    </div>
-                    <div class="app-icon">
-                        <a href="https://apps.apple.com/us/app/blob-to-do-task-list/id6744033382" target="_blank" rel="noopener noreferrer">
-                            <img src="Assets/App Icons/blobtodo_app_icon.png" alt="Blob To Do - Task List">
-                        </a>
-                    </div>
+                <div class="app-icon">
+                    <a href="https://apps.apple.com/us/app/dream-interpretation-ai-app/id1670009423" target="_blank" rel="noopener noreferrer">
+                        <img src="Assets/App Icons/dmai_app_icon.png" alt="Dream Interpretation AI App">
+                    </a>
+                </div>
+                <div class="app-icon">
+                    <a href="https://apps.apple.com/us/app/blob-to-do-task-list/id6744033382" target="_blank" rel="noopener noreferrer">
+                        <img src="Assets/App Icons/blobtodo_app_icon.png" alt="Blob To Do - Task List">
+                    </a>
+                </div>
+                <div class="app-icon">
+                    <a href="https://apps.apple.com/us/app/e4c5-app-blocker/id6757018750" target="_blank" rel="noopener noreferrer" aria-label="e4c5 app icon">
+                        <img src="Assets/App Icons/e4c5_app_icon.png" alt="e4c5 app icon">
+                    </a>
+                </div>
+                <div class="app-icon">
+                    <a href="http://apps.apple.com/us/app/bible-verse-widget-kjv/id6794831675" target="_blank" rel="noopener noreferrer" aria-label="bibw app icon">
+                        <img src="Assets/App Icons/bibw_app_icon.png" alt="bibw app icon">
+                    </a>
                 </div>
             </div>
         </div>
-
-        <div class="sections-wrapper">
-            <div class="section coming-soon">
-                <h2>
-                    Soon: e4c5 - app blocker
-                    <span class="app-icon-small">
-                        <img src="Assets/App Icons/e4c5_app_icon.png" alt="e4c6">
-                    </span>
-                </h2>
-                <div class="screenshots-row">
-                    <img src="Assets/App Icons/s0.png" alt="Screenshot 0">
-                    <img src="Assets/App Icons/s1.png" alt="Screenshot 1">
-                    <img src="Assets/App Icons/s4.png" alt="Screenshot 4">
-                </div>
-            </div>
-
-            <div class="section how-it-works">
-                <h2>👀 How it works:</h2>
-                <ol>
-                    <li>Choose apps to block</li>
-                    <li>To open them, solve a chess puzzle</li>
-                    <li>Less scrolling, more ELO</li>
-                </ol>
-            </div>
+        <div class="support-block">
+            <p>Issues? Request support at naiv.agency@gmail.com</p>
         </div>
 
         <div class="copyright">
